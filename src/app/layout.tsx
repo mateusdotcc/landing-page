@@ -1,8 +1,8 @@
 import './globals.css'
-import { Inter } from 'next/font/google'
+import { Plus_Jakarta_Sans } from 'next/font/google'
 import { ReactNode } from 'react'
 
-const inter = Inter({ subsets: ['latin'] })
+const jakartaSans = Plus_Jakarta_Sans({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Landing Page',
@@ -16,7 +16,7 @@ type Props = {
 export default function RootLayout({ children }: Props) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={jakartaSans.className}>{children}</body>
     </html>
   )
 }

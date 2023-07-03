@@ -6,12 +6,13 @@ module.exports = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-      },
+    colors: {
+      white: '#FFFFFF',
+      blue: '#0077F4',
+      blueLight: '#F0F8FF',
+      gray: '#1C3C50',
+      grayLight: '#C8D4DD',
+      green: '#00D59F',
     },
   },
   plugins: [],

@@ -2,7 +2,7 @@ import './globals.css'
 import { Plus_Jakarta_Sans } from 'next/font/google'
 import { ReactNode } from 'react'
 
-const jakartaSans = Plus_Jakarta_Sans({ subsets: ['latin'] })
+const jakartaSans = Plus_Jakarta_Sans({ subsets: ['latin'], weight: ['400', '500', '700'] })
 
 export const metadata = {
   title: 'Landing Page',

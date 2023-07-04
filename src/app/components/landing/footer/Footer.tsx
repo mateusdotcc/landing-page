@@ -1,6 +1,6 @@
-import { Header } from '@/app/components/footer/components/Header'
-import { Navigation } from '@/app/components/footer/components/Navigation'
-import { Copyright } from '@/app/components/footer/components/Copyright'
+import { Header } from '@/app/components/landing/footer/components/Header'
+import { Navigation } from '@/app/components/landing/footer/components/Navigation'
+import { Copyright } from '@/app/components/landing/footer/components/Copyright'
 
 export function Footer() {
   return (

@@ -1,5 +1,3 @@
-import { Tag } from '@/app/components/Tag'
-
 export function Hero() {
   return (
     <header
@@ -8,7 +6,11 @@ export function Hero() {
       }
     >
       <div className={'flex w-full max-w-[724px] flex-col text-center'}>
-        <Tag className={'mb-6'} title={'Webinars Exclusivos'} />
+        <div
+          className={`mb-[1.4rem] flex items-center justify-center self-center rounded-br-full rounded-tl-full rounded-tr-full border-2 border-blue pb-1.5 pl-5 pr-5 pt-1.5`}
+        >
+          <span className="text-sm font-bold uppercase text-blue">Webinars Exclusivos</span>
+        </div>
         <h2 className={'mb-2 text-5xl text-gray'}>Menos Conversinha,</h2>
         <h1 className={'mb-[30px] text-[5.4rem] leading-[86px] tracking-[0.05rem] text-blue'}>
           <strong>Mais Conversão</strong>

@@ -1,8 +1,8 @@
-import { Hero } from '@/app/components/Hero'
-import { Heading } from '@/app/components/Heading'
-import { Leads } from '@/app/components/Leads'
-import { Gallery } from '@/app/components/Gallery'
-import { Footer } from '@/app/components/footer/Footer'
+import { Hero } from '@/app/components/landing/Hero'
+import { Heading } from '@/app/components/landing/Heading'
+import { Leads } from '@/app/components/landing/Leads'
+import { Gallery } from '@/app/components/landing/gallery/Gallery'
+import { Footer } from '@/app/components/landing/footer/Footer'
 
 export default function Home() {
   return (

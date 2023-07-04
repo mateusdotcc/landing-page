@@ -26,7 +26,7 @@ export function Gallery() {
           {category === 'agency' && (
             <ul className={'flex w-full grid-cols-3 flex-wrap gap-[2rem]'}>
               {agency.map((item, i) => (
-                <li className={`w-[${width}] h-[${height}]`} key={`${item.title}-${i}`}>
+                <li className={` w-[${width}] h-[${height}]`} key={`${item.title}-${i}`}>
                   <Card {...item} />
                 </li>
               ))}

@@ -3,11 +3,7 @@ import { Button } from '@/app/components/Button'
 
 export function Leads() {
   return (
-    <section
-      className={
-        'flex w-full flex-col items-center justify-center bg-blueLight pb-[173px] pt-[157px]'
-      }
-    >
+    <section className={'flex w-full flex-col items-center justify-center bg-blueLight pt-[157px]'}>
       <div className={'flex w-full max-w-[1452px] flex-row items-center justify-between text-left'}>
         <div>
           <Image src={'/comparativo.png'} alt={'Comparativo'} width={739} height={687} />

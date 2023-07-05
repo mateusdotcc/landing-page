@@ -1,17 +1,19 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { CategoryProps, Navigation } from '@/app/components/landing/gallery/components/Navigation'
-import { Card } from '@/app/components/landing/gallery/components/Card'
-import { createContext, ReactNode, useContext, useState } from 'react'
-import { agency } from '@/app/components/landing/gallery/config/agency'
-import { chatbot } from '@/app/components/landing/gallery/config/chatbot'
-import { mktDigital } from '@/app/components/landing/gallery/config/mktDigital'
-import { leads } from '@/app/components/landing/gallery/config/leads'
-import { media } from '@/app/components/landing/gallery/config/media'
-import { Section } from '@/app/components/UI/Section'
+import { CategoryProps, Navigation } from '@/app/landing/gallery/components/Navigation'
+import { Card } from '@/components/UI/Card'
+import { createContext, Dispatch, ReactNode, SetStateAction, useContext, useState } from 'react'
+import { agency } from '@/app/landing/gallery/config/agency'
+import { chatbot } from '@/app/landing/gallery/config/chatbot'
+import { mktDigital } from '@/app/landing/gallery/config/mktDigital'
+import { leads } from '@/app/landing/gallery/config/leads'
+import { media } from '@/app/landing/gallery/config/media'
+import { Section } from '@/components/UI/Section'
 
-const CategoryContext = createContext([{}, () => {}])
+type ContextProps = [{}, Dispatch<SetStateAction<CategoryProps>>]
+
+const CategoryContext = createContext<ContextProps>([{}, () => null])
 
 const variants = {
   initial: {},

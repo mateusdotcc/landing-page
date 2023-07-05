@@ -3,10 +3,10 @@
 import ReactPlayer from 'react-player/lazy'
 import { AnimatePresence, motion } from 'framer-motion'
 import Image, { StaticImageData } from 'next/image'
-import CloseIcon from '../../../../../../public/CloseIcon.svg'
-import PlayIcon from '../../../../../../public/PlayIcon.svg'
+import CloseIcon from '../../../public/CloseIcon.svg'
+import PlayIcon from '../../../public/PlayIcon.svg'
 import { useState } from 'react'
-import { DownloadButton } from '@/app/components/UI/DownloadButton'
+import { DownloadButton } from '@/components/UI/DownloadButton'
 
 type Props = {
   cover: StaticImageData

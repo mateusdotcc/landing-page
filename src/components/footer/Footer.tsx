@@ -1,9 +1,9 @@
 'use client'
 
-import { Header } from '@/app/components/landing/footer/components/Header'
-import { Navigation } from '@/app/components/landing/footer/components/Navigation'
-import { Copyright } from '@/app/components/landing/footer/components/Copyright'
-import { Section } from '@/app/components/UI/Section'
+import { Header } from '@/components/footer/components/Header'
+import { Navigation } from '@/components/footer/components/Navigation'
+import { Copyright } from '@/components/footer/components/Copyright'
+import { Section } from '@/components/UI/Section'
 
 export function Footer() {
   return (

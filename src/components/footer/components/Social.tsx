@@ -1,9 +1,9 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { ReactNode } from 'react'
-import LinkedInIcon from '../../../../../../public/LinkedInIcon.svg'
-import FacebookIcon from '../../../../../../public/FacebookIcon.svg'
-import InstagramIcon from '../../../../../../public/InstagramIcon.svg'
+import LinkedInIcon from '../../../../public/LinkedInIcon.svg'
+import FacebookIcon from '../../../../public/FacebookIcon.svg'
+import InstagramIcon from '../../../../public/InstagramIcon.svg'
 
 type LinkProps = {
   icon: string

@@ -1,10 +1,10 @@
-import { Button } from '@/app/components/landing/gallery/components/Button'
-import { Select } from '@/app/components/form/Select'
-import { useCategory } from '@/app/components/landing/gallery/Gallery'
+import { Button } from '@/app/landing/gallery/components/Button'
+import { Select } from '@/components/form/Select'
+import { useCategory } from '@/app/landing/gallery/Gallery'
 
 export type CategoryProps = 'agency' | 'chatbot' | 'mkt-digital' | 'leads' | 'media'
 
-type ItemProps = {
+export type ItemProps = {
   as: CategoryProps
   title: string
   active: boolean

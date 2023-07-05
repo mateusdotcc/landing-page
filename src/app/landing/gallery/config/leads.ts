@@ -1,4 +1,4 @@
-import Cover from '../../../../../../public/thumbnail.png'
+import Cover from '../../../../../public/thumbnail.png'
 
 export const leads = [
   {

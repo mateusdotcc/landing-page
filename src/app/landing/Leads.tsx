@@ -1,8 +1,8 @@
 'use client'
 
 import Image from 'next/image'
-import { Button } from '@/app/components/UI/Button'
-import { Section } from '@/app/components/UI/Section'
+import { Button } from '@/components/UI/Button'
+import { Section } from '@/components/UI/Section'
 
 export function Leads() {
   return (

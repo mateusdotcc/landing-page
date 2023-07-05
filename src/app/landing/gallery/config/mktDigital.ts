@@ -1,6 +1,10 @@
-import Cover from '../../../../../../public/thumbnail.png'
+import Cover from '../../../../../public/thumbnail.png'
 
-export const media = [
+export const mktDigital = [
+  {
+    cover: Cover,
+    title: 'Como aumentar sua Geração de Leads feat. Traktor',
+  },
   {
     cover: Cover,
     title: 'Como aumentar sua Geração de Leads feat. Traktor',

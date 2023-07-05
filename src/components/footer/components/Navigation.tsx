@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Social } from '@/app/components/landing/footer/components/Social'
+import { Social } from '@/components/footer/components/Social'
 
 const list = [
   {

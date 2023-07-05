@@ -1,5 +1,5 @@
 import { Button } from '@/app/components/landing/gallery/components/Button'
-import { Select } from '@/app/components/Select'
+import { Select } from '@/app/components/form/Select'
 import { useCategory } from '@/app/components/landing/gallery/Gallery'
 
 export type CategoryProps = 'agency' | 'chatbot' | 'mkt-digital' | 'leads' | 'media'
@@ -22,9 +22,13 @@ export function Navigation() {
   const { category, setCategory } = useCategory()
 
   return (
-    <div className={'mb-[3.8rem] flex justify-between border-b-2 border-grayLight pb-[1.6rem]'}>
-      <nav>
-        <ul className={'flex gap-x-[1rem]'}>
+    <div
+      className={
+        'mb-[3.8rem] flex flex-col justify-between border-b-2 border-grayLight pb-[1.6rem] md:flex-row md:gap-y-[2rem]'
+      }
+    >
+      <nav className={'mb-[1rem] md:mb-0'}>
+        <ul className={'flex flex-col gap-[1rem] md:flex-row'}>
           {items.map((item) => (
             <li key={item.title}>
               <Button

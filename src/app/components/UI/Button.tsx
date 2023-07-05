@@ -7,7 +7,7 @@ export function Button({ title }: Props) {
     <button
       type={'button'}
       className={
-        'w-auto rounded-full bg-blue pb-5 pl-9 pr-9 pt-5 transition ease-out hover:bg-green'
+        'w-auto rounded-full bg-blue pb-4 pl-9 pr-9 pt-4 transition ease-out hover:bg-green md:pb-5 md:pt-5'
       }
     >
       <span className={'whitespace-nowrap font-medium uppercase tracking-wider text-white'}>

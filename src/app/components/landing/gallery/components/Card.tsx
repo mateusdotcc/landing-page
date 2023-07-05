@@ -1,9 +1,12 @@
+'use client'
+
 import ReactPlayer from 'react-player/lazy'
+import { AnimatePresence, motion } from 'framer-motion'
 import Image, { StaticImageData } from 'next/image'
 import CloseIcon from '../../../../../../public/CloseIcon.svg'
 import PlayIcon from '../../../../../../public/PlayIcon.svg'
 import { useState } from 'react'
-import { DownloadButton } from '@/app/components/DownloadButton'
+import { DownloadButton } from '@/app/components/UI/DownloadButton'
 
 type Props = {
   cover: StaticImageData
@@ -38,16 +41,30 @@ function DownloadList() {
 
 function Modal({ onCancel }: ModalProps) {
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
       className={
         'fixed left-0 top-0 z-50 flex h-screen w-screen items-center justify-center bg-gray/50'
       }
     >
-      <ul className={'fixed bottom-0 left-0 z-auto flex flex-col items-start gap-3 bg-white p-4'}>
+      <motion.ul
+        initial={{ y: '100%' }}
+        animate={{ y: 0, transition: { delay: 0.5, type: 'just' } }}
+        exit={{ y: '100%' }}
+        className={
+          'fixed bottom-0 left-0 z-auto hidden flex-col items-start gap-3 bg-white p-4 md:flex'
+        }
+      >
         <DownloadList />
-      </ul>
+      </motion.ul>
 
-      <div
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        exit={{ scale: 0.9 }}
+        transition={{ type: 'just' }}
         className={
           'pointer-events-auto min-h-[774px] w-full max-w-[604px] rounded-xl border-t-4 border-blue bg-white'
         }
@@ -73,7 +90,7 @@ function Modal({ onCancel }: ModalProps) {
           </h2>
         </header>
 
-        <div className={'h-[24.4rem] w-full'}>
+        <div className={'h-[24.4rem] w-full bg-grayLight'}>
           <ReactPlayer
             className="react-player"
             url="https://www.youtube.com/watch?v=ysz5S6PUM-U"
@@ -112,8 +129,8 @@ function Modal({ onCancel }: ModalProps) {
             <DownloadList />
           </ul>
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   )
 }
 
@@ -152,7 +169,7 @@ export function Card({ cover, title }: Props) {
         </div>
       </button>
 
-      {isOpen && <Modal onCancel={() => setIsOpen(false)} />}
+      <AnimatePresence>{isOpen && <Modal onCancel={() => setIsOpen(false)} />}</AnimatePresence>
     </>
   )
 }

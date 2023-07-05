@@ -1,80 +1,139 @@
 'use client'
 
+import { motion } from 'framer-motion'
 import { CategoryProps, Navigation } from '@/app/components/landing/gallery/components/Navigation'
 import { Card } from '@/app/components/landing/gallery/components/Card'
-import { createContext, useContext, useState } from 'react'
+import { createContext, ReactNode, useContext, useState } from 'react'
 import { agency } from '@/app/components/landing/gallery/config/agency'
 import { chatbot } from '@/app/components/landing/gallery/config/chatbot'
 import { mktDigital } from '@/app/components/landing/gallery/config/mktDigital'
 import { leads } from '@/app/components/landing/gallery/config/leads'
 import { media } from '@/app/components/landing/gallery/config/media'
+import { Section } from '@/app/components/UI/Section'
 
 const CategoryContext = createContext([{}, () => {}])
 
-const width = '22.4rem'
-const height = '18rem'
+const variants = {
+  initial: {},
+  animate: {
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+}
+
+const itemVariant = {
+  initial: {
+    opacity: 0,
+    y: 10,
+  },
+  animate: {
+    opacity: 1,
+    y: 0,
+  },
+}
+
+const WIDTH = '22.4rem'
+const HEIGHT = '18rem'
+
+function List({ children }: { children: ReactNode }) {
+  return (
+    <motion.ul
+      variants={variants}
+      initial={'initial'}
+      animate={'animate'}
+      className={'grid w-full grid-cols-1 flex-wrap gap-[2rem] md:grid-cols-3'}
+    >
+      {children}
+    </motion.ul>
+  )
+}
 
 export function Gallery() {
   const [category, setCategory] = useState<CategoryProps>('agency')
 
   return (
-    <section className={'flex min-h-[1268px] w-full justify-center'}>
-      <div className={'w-full max-w-[1140px] pb-[92px] pt-[92px]'}>
+    <Section
+      className={
+        'flex min-h-[1268px] w-full justify-center transition-opacity duration-[0.9s] ease-out'
+      }
+    >
+      <div className={'w-full max-w-[1140px] pb-[2rem] pt-[2rem] md:pb-[92px] md:pt-[92px]'}>
         <CategoryContext.Provider value={[category, setCategory]}>
           <Navigation />
 
           {category === 'agency' && (
-            <ul className={'grid w-full grid-cols-3 flex-wrap gap-[2rem]'}>
+            <List>
               {agency.map((item, i) => (
-                <li className={`w-[${width}] h-[${height}]`} key={`${item.title}-${i}`}>
+                <motion.li
+                  key={`${item.title}-${i}`}
+                  variants={itemVariant}
+                  className={`w-[${WIDTH}] h-[${HEIGHT}]`}
+                >
                   <Card {...item} />
-                </li>
+                </motion.li>
               ))}
-            </ul>
+            </List>
           )}
 
           {category === 'chatbot' && (
-            <ul className={'grid w-full grid-cols-3 flex-wrap justify-start gap-[2rem]'}>
+            <List>
               {chatbot.map((item, i) => (
-                <li className={`w-[${width}] h-[${height}]`} key={`${item.title}-${i}`}>
+                <motion.li
+                  key={`${item.title}-${i}`}
+                  variants={itemVariant}
+                  className={`w-[${WIDTH}] h-[${HEIGHT}]`}
+                >
                   <Card {...item} />
-                </li>
+                </motion.li>
               ))}
-            </ul>
+            </List>
           )}
 
           {category === 'mkt-digital' && (
-            <ul className={'grid w-full grid-cols-3 flex-wrap justify-start gap-[2rem]'}>
+            <List>
               {mktDigital.map((item, i) => (
-                <li className={`w-[${width}] h-[${height}]`} key={`${item.title}-${i}`}>
+                <motion.li
+                  key={`${item.title}-${i}`}
+                  variants={itemVariant}
+                  className={`w-[${WIDTH}] h-[${HEIGHT}]`}
+                >
                   <Card {...item} />
-                </li>
+                </motion.li>
               ))}
-            </ul>
+            </List>
           )}
 
           {category === 'leads' && (
-            <ul className={'grid w-full grid-cols-3 flex-wrap justify-start gap-[2rem]'}>
+            <List>
               {leads.map((item, i) => (
-                <li className={`w-[${width}] h-[${height}]`} key={`${item.title}-${i}`}>
+                <motion.li
+                  key={`${item.title}-${i}`}
+                  variants={itemVariant}
+                  className={`w-[${WIDTH}] h-[${HEIGHT}]`}
+                >
                   <Card {...item} />
-                </li>
+                </motion.li>
               ))}
-            </ul>
+            </List>
           )}
 
           {category === 'media' && (
-            <ul className={'grid w-full grid-cols-3 flex-wrap justify-start gap-[2rem]'}>
+            <List>
               {media.map((item, i) => (
-                <li className={`w-[${width}] h-[${height}]`} key={`${item.title}-${i}`}>
+                <motion.li
+                  key={`${item.title}-${i}`}
+                  variants={itemVariant}
+                  className={`w-[${WIDTH}] h-[${HEIGHT}]`}
+                >
                   <Card {...item} />
-                </li>
+                </motion.li>
               ))}
-            </ul>
+            </List>
           )}
         </CategoryContext.Provider>
       </div>
-    </section>
+    </Section>
   )
 }
 

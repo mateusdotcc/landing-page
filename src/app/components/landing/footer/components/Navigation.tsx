@@ -65,12 +65,12 @@ function Menu() {
     <>
       {list.map(({ title, links }) => (
         <nav key={title}>
-          <h6 className={'mb-[2.7rem]'}>{title}</h6>
+          <h6 className={'mb-[1.7rem] md:mb-[2.7rem]'}>{title}</h6>
 
-          <ul className={'mb-0 flex flex-col gap-y-[1.2rem] text-gray200'}>
+          <ul className={'mb-0 flex flex-col gap-y-[0.8rem] text-gray200 md:gap-y-[1.2rem]'}>
             {links.map(({ label, path }) => (
               <li key={label}>
-                <Link href={path} className={'transition hover:text-blue'}>
+                <Link href={path} className={'transition hover:text-blue'} prefetch={false}>
                   {label}
                 </Link>
               </li>
@@ -84,7 +84,7 @@ function Menu() {
 
 export function Navigation() {
   return (
-    <div className={'grid grid-cols-4 gap-10'}>
+    <div className={'grid grid-cols-1 gap-10 md:grid-cols-4'}>
       <Menu />
       <Contacts />
     </div>

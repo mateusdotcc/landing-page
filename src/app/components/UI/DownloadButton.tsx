@@ -53,7 +53,7 @@ export function DownloadButton({ title = 'Spreadsheet.xls', variant = 'green' }:
   return (
     <Link
       href={'/'}
-      className={`group flex rounded-lg ${variants()?.bg}/${opacity} transition overflow-hidden hover:bg-blue`}
+      className={`select-none group flex rounded-lg ${variants()?.bg}/${opacity} transition overflow-hidden hover:bg-blue`}
     >
       <span className={`flex h-[1.8rem] w-[2rem] items-center justify-center ${variants()?.bg}/${opacity} transition group-hover:bg-blue`}>
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">

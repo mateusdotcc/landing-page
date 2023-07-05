@@ -21,6 +21,11 @@ body {
   background: rgb(var(--background-end-rgb));
 }
 
-b {
-  font-weight: 700;
+img {
+  user-select: none;
+}
+
+::selection {
+  color: #1C3C50;
+  background-color: #00D59F;
 }

@@ -144,7 +144,11 @@ export function Card({ cover, title }: Props) {
         </div>
 
         <div className={'p-5'}>
-          <h4 className={'flex-wrap text-left font-bold text-gray'}>{title}</h4>
+          <h4
+            className={'flex-wrap text-left font-bold text-gray transition group-hover:text-blue'}
+          >
+            {title}
+          </h4>
         </div>
       </button>
 

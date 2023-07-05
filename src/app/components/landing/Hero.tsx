@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 export function Hero() {
   return (
     <header
@@ -13,7 +15,17 @@ export function Hero() {
         </div>
         <h2 className={'mb-2 text-5xl text-gray'}>Menos Conversinha,</h2>
         <h1 className={'mb-[30px] text-[5.4rem] leading-[86px] tracking-[0.05rem] text-blue'}>
-          <strong>Mais Conversão</strong>
+          <strong className={'relative'}>
+            Mais Conversão
+            <div className={'absolute right-[-20px] top-[15px]'}>
+              <Image
+                src={'/asset-header.png'}
+                width={49}
+                height={32}
+                alt={'Apenas um efeito sobre o texto Conversão'}
+              />
+            </div>
+          </strong>
         </h1>
         <div className="mb-3.5 h-px w-full bg-grayLight" />
         <h5 className={'text-lg text-gray'}>

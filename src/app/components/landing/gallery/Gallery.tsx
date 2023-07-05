@@ -24,9 +24,9 @@ export function Gallery() {
           <Navigation />
 
           {category === 'agency' && (
-            <ul className={'flex w-full grid-cols-3 flex-wrap gap-[2rem]'}>
+            <ul className={'grid w-full grid-cols-3 flex-wrap gap-[2rem]'}>
               {agency.map((item, i) => (
-                <li className={` w-[${width}] h-[${height}]`} key={`${item.title}-${i}`}>
+                <li className={`w-[${width}] h-[${height}]`} key={`${item.title}-${i}`}>
                   <Card {...item} />
                 </li>
               ))}
@@ -34,7 +34,7 @@ export function Gallery() {
           )}
 
           {category === 'chatbot' && (
-            <ul className={'flex w-full grid-cols-3 flex-wrap justify-start gap-[2rem]'}>
+            <ul className={'grid w-full grid-cols-3 flex-wrap justify-start gap-[2rem]'}>
               {chatbot.map((item, i) => (
                 <li className={`w-[${width}] h-[${height}]`} key={`${item.title}-${i}`}>
                   <Card {...item} />
@@ -44,7 +44,7 @@ export function Gallery() {
           )}
 
           {category === 'mkt-digital' && (
-            <ul className={'flex w-full grid-cols-3 flex-wrap justify-start gap-[2rem]'}>
+            <ul className={'grid w-full grid-cols-3 flex-wrap justify-start gap-[2rem]'}>
               {mktDigital.map((item, i) => (
                 <li className={`w-[${width}] h-[${height}]`} key={`${item.title}-${i}`}>
                   <Card {...item} />
@@ -54,7 +54,7 @@ export function Gallery() {
           )}
 
           {category === 'leads' && (
-            <ul className={'flex w-full grid-cols-3 flex-wrap justify-start gap-[2rem]'}>
+            <ul className={'grid w-full grid-cols-3 flex-wrap justify-start gap-[2rem]'}>
               {leads.map((item, i) => (
                 <li className={`w-[${width}] h-[${height}]`} key={`${item.title}-${i}`}>
                   <Card {...item} />
@@ -64,7 +64,7 @@ export function Gallery() {
           )}
 
           {category === 'media' && (
-            <ul className={'flex w-full grid-cols-3 flex-wrap justify-start gap-[2rem]'}>
+            <ul className={'grid w-full grid-cols-3 flex-wrap justify-start gap-[2rem]'}>
               {media.map((item, i) => (
                 <li className={`w-[${width}] h-[${height}]`} key={`${item.title}-${i}`}>
                   <Card {...item} />
